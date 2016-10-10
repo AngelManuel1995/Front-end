@@ -1,0 +1,41 @@
+!!!5
+%html{class:"no-js", lang:"es"}
+  %head
+    %meta{charset:"utf-8"}
+    %title Angel's page
+    %meta{name:"description", content:"Come rico y saludable"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %link{href:"https://fonts.googleapis.com/css?family=Dancing+Script", rel:"stylesheet"}
+    %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/bootstrap.css"}
+    %link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css"}
+    %link{rel:"stylesheet", href:"css/style.css"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+  %body
+    ="<!--[if lt IE 9]>"
+    %p{class:"browserupgrade"}
+      Estás usando un navegador
+      %strong desactualizado.
+      Por favor
+      %a{href:"http://browsehappy.com/"}
+        actualiza tu navegador
+      para una mejor experiencia
+    ="<![endif]-->"
+    .video-container
+      %video{autoplay:true, loop:true, width:"1280", height:"720", poster:"/videos/images/abcd.jpg"}
+        %source{src:"/videos/mp4/abcd.mp4", typ:"video/mp4"}
+        %source{src:"/videos/webm/abcd.webm", typ:"video/webm"}
+    .row.full-height.middle-xs.center-xs.relative.up
+      .col-xs-12
+        .box.white-text
+          %h1.dancing-script.title.no-margin Angel's page
+          %p Junior developer Ruby On Rails
+          %img{src:"/images/logo.png", width:"150", height:"150"}
+      %nav.fixed.top.right.white-text.navigation#navigation
+        -menu = ["Home", "Menu", "Galery", "Contact", "Info"]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a{href:"#"}= item
+      .absolute.medium.black-bg.large-padding.bottom.white-text.full-width#description
+        Developed by : Angel Manuel Góez Giraldo
