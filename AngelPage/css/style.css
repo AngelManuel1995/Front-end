@@ -116,7 +116,18 @@ textarea {
   color: #FFF;
   cursor: pointer;
   text-decoration: none;
-  text-shadow: 5px -2px 10px #DE2E2A;
+}
+
+#description ul {
+  margin: 0px;
+}
+
+#description.absolute {
+  bottom: 0px;
+}
+
+#description.fixed {
+  top: 0px;
 }
 
 /* ==========================================================================
@@ -126,7 +137,7 @@ textarea {
  * Hide visually and from screen readers
  */
 .black-bg {
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .white-text {
@@ -139,6 +150,10 @@ textarea {
 
 .title {
   font-size: 4em;
+}
+
+.title:hover {
+  font-size: 5em;
 }
 
 .medium, .navigation li {
