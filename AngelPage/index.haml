@@ -25,7 +25,7 @@
       %video{autoplay:true, loop:true, width:"1280", height:"720", poster:"/videos/images/abcd.jpg"}
         %source{src:"/videos/mp4/abcd.mp4", typ:"video/mp4"}
         %source{src:"/videos/webm/abcd.webm", typ:"video/webm"}
-    .row.full-height.middle-xs.center-xs.relative.up
+    .row.full-height.middle-xs.center-xs.relative.up#home
       .col-xs-12
         .box.white-text
           %h1.dancing-script.title.no-margin Angel's page
@@ -48,7 +48,19 @@
                   -menu.each do |item|
                     %li
                       %a{}= item
-  .full-height
+  .text-center#menu
+    -menuPhotos = [{name:"Club Sandwich", image:"club-sandwich", pricing:"10"},
+      {name:"Combo hamburguesa", image:"combo", pricing:"10"},
+      {name:"Hamburguesa", image:"hamburger", pricing:"10"},
+      {name:"Hot cakes", image:"hot-cakes", pricing:"10"},
+      {name:"Panini", image:"panini", pricing:"10"},
+      {name:"Papas", image:"papas", pricing:"10"},
+      {name:"Club sandwich", image:"club-sandwich", pricing:"10"},
+      {name:"Combo hamburguesa", image:"hamburger", pricing:"5"}]
+    .row
+      -menuPhotos.each do |photo|
+        .col-md-4.col-lg-3.com-sm-6.col-xs-12.food{style:"background-image:url(/images/food/#{photo[:image]}-thumb.jpg)"}
+          .screen
 
   %script{src:"http://code.jquery.com/jquery-3.1.1.min.js", integrity:"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=", crossorigin:"anonymous"}
   %script

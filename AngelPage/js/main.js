@@ -1,5 +1,9 @@
 ;(function(){
   let sticky = false
+
+$("#sticky-navigation").removeClass("hidden")
+$("#sticky-navigation").slideUp(0)
+
   $(window).scroll(()=>{
     const inBottom = isInBottom()
     if(inBottom && !sticky){
@@ -18,20 +22,20 @@
 
 function stickyNavigation(){
   $("#description").addClass("fixed").removeClass("absolute")
-  $("#navigation").addClass("hidden")
-  $("#sticky-navigation").removeClass("hidden")
+  $("#navigation").slideUp()
+  $("#sticky-navigation").slideDown()
 }
 
 function unStickNavigation(){
   $("#description").removeClass("fixed").addClass("absolute")
-  $("#navigation").removeClass("hidden")
-  $("#sticky-navigation").addClass("hidden")
+  $("#navigation").slideDown("hidden")
+  $("#sticky-navigation").slideUp("hidden")
 }
 
   function isInBottom(){
     const $description = $("#description");
     const descriptionHeight = $description.height()
 
-    return $(window).scrollTop() > $(window).height() - (descriptionHeight * 1.5)
+    return $(window).scrollTop() > $(window).height() - (descriptionHeight * 2)
   }
 })()
